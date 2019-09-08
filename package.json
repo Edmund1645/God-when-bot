@@ -1,0 +1,22 @@
+{
+  "name": "god-when-bot",
+  "version": "1.0.0",
+  "description": "a twitter bot to reply to 'God when?', don't judge me please",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edmund1645/God-when-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Edmund1645/God-when-bot/issues"
+  },
+  "homepage": "https://github.com/Edmund1645/God-when-bot#readme",
+  "dependencies": {
+    "twit": "^2.2.11"
+  }
+}
