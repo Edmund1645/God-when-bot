@@ -10,12 +10,11 @@ const stream = T.stream('statuses/filter', {
 
 stream.on('tweet', tweet => {
   let lcText = tweet.text.toLowerCase();
-  if (lcText.startsWith('god when?') || lcText.endsWith('god when?')) {
+  if (lcText.startsWith('god when') || lcText.endsWith('god when?') || lcText.endsWith('god when')) {
     Twitter.reply(tweet, `${getReply(replies)}`);
     return;
   } else if (lcText.includes('god am i not your')) {
     Twitter.reply(tweet, `${getReply(replies)}`);
     return;
   }
-  console.log(tweet.text);
 });
