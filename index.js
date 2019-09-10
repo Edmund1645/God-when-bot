@@ -16,7 +16,7 @@ const shouldReply = () => {
 };
 
 const shouldRetweet = () => {
-  if (Math.random() >= 0.32) {
+  if (Math.random() >= 0.4) {
     return true;
   } else {
     return false;
