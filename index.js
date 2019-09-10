@@ -28,9 +28,8 @@ stream.on('tweet', tweet => {
 
   if (lcText.startsWith('god when') || lcText.endsWith('god when?') || lcText.endsWith('god when')) {
     if (shouldReply() && lcText.length <= 30) {
-      setTimeout(Twitter.reply(tweet, `${getReply(replies)}`), 1500); // delay before replying.
-
       Twitter.like(tweet);
+      Twitter.reply(tweet, `${getReply(replies)}`);
 
       if (shouldRetweet()) {
         Twitter.retweet(tweet);
