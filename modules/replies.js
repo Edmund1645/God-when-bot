@@ -28,5 +28,31 @@ module.exports = [
                 O
   `,
   "Don't worry, I'll attend to you in 2025",
-  "I'll see what I can do."
+  "I'll see what I can do.",
+  'This night',
+  "stop sinning and maybe I'll look your way",
+  'Tomorrow',
+  `s
+    t
+      o
+        p
+
+        s
+      i
+    n
+  n
+    i
+      n
+        g`,
+  'when last did you pray?',
+  `N
+    o
+      t
+
+      T
+    o
+  d
+    a
+      y
+  `
 ];
