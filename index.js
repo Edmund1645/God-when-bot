@@ -8,18 +8,34 @@ const stream = T.stream('statuses/filter', {
   lang: 'en'
 });
 const shouldReply = () => {
-  if (Math.random() >= 0.3) {
+  if (Math.random() >= 0.32) {
     return true;
   } else {
     return false;
   }
 };
+
+const shouldRetweet = () => {
+  if (Math.random() >= 0.32) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 stream.on('tweet', tweet => {
   let lcText = tweet.text.toLowerCase();
 
   if (lcText.startsWith('god when') || lcText.endsWith('god when?') || lcText.endsWith('god when')) {
     if (shouldReply() && lcText.length <= 30) {
-      Twitter.reply(tweet, `${getReply(replies)}`);
+      setTimeout(Twitter.reply(tweet, `${getReply(replies)}`), 1500); // delay before replying.
+
+      Twitter.like(tweet);
+
+      if (shouldRetweet()) {
+        Twitter.retweet(tweet);
+      }
+
       return;
     }
 

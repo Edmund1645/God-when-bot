@@ -18,5 +18,11 @@ module.exports = {
         `);
       }
     );
+  },
+  like: tweet => {
+    T.post('favorites/create', { id: tweet.id_str });
+  },
+  retweet: tweet => {
+    T.post('statuses/retweet/:id', { id: tweet.id_str });
   }
 };
