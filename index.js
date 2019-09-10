@@ -27,7 +27,7 @@ stream.on('tweet', tweet => {
   let lcText = tweet.text.toLowerCase();
 
   if (lcText.startsWith('god when') || lcText.endsWith('god when?') || lcText.endsWith('god when')) {
-    if (shouldReply() && lcText.length <= 30) {
+    if (shouldReply() && lcText.length <= 35) {
       Twitter.like(tweet);
       Twitter.reply(tweet, `${getReply(replies)}`);
 
