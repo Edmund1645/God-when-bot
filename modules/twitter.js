@@ -11,7 +11,12 @@ module.exports = {
         status: `@${tweet.user.screen_name}     ${reply}`,
         in_reply_to_status_id: tweet.id_str
       },
-      function(err, data, message) {}
+      function(err, data, message) {
+        console.log(`error: ${err}
+        bot tweet: ${data.text}
+        message: ${message}
+        `);
+      }
     );
   }
 };

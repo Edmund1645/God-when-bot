@@ -8,7 +8,7 @@ const stream = T.stream('statuses/filter', {
   lang: 'en'
 });
 const shouldReply = () => {
-  if (Math.random() >= 0.35) {
+  if (Math.random() >= 0.32) {
     return true;
   } else {
     return false;
@@ -18,13 +18,20 @@ stream.on('tweet', tweet => {
   let lcText = tweet.text.toLowerCase();
 
   if (lcText.startsWith('god when') || lcText.endsWith('god when?') || lcText.endsWith('god when')) {
-    Twitter.reply(tweet, `${getReply(replies)}`);
-    console.log(tweet.text);
+    if (lcText.length <= 30) {
+      Twitter.reply(tweet, `${getReply(replies)}`);
+      return;
+    }
+
+    console.log(`user tweet: ${tweet.text}
+    length: ${tweet.text.length}`);
+
     return;
   } else if (lcText.includes('god am i not your')) {
     Twitter.reply(tweet, `${getReply(replies)}`);
-    console.log(tweet.text);
+
+    console.log(`user tweet: ${tweet.text}`);
+
     return;
   }
-
 });
