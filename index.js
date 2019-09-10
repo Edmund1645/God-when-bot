@@ -8,7 +8,7 @@ const stream = T.stream('statuses/filter', {
   lang: 'en'
 });
 const shouldReply = () => {
-  if (Math.random() >= 0.32) {
+  if (Math.random() >= 0.45) {
     return true;
   } else {
     return false;
